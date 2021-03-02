@@ -36,6 +36,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/shop">ข้อมูลร้าน</a>
                         </li> 
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
