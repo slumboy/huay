@@ -32,11 +32,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto" >
-                        <li class="nav-item">
-                            <a class="nav-link" href="/shop">ข้อมูลร้าน</a>
-                        </li> 
-                        
+                    <ul class="navbar-nav">
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="/shop">ข้อมูลร้าน</a>
+                            </li> 
+                        @endauth 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
