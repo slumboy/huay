@@ -1,25 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Shop</title>
-</head>
-<body>
-    <form action="/shop" method="POST">
-       {{ csrf_field() }}
-        <div class="form-group">
-          <label for="">ชื่อร้าน</label>
-          <input type="text" class="form-control" id="shop_name" name="shop_name" placeholder="ชื่อร้าน" required>
-        </div> 
+@extends('layouts.app')
+@section('content')
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <form action="/shop" method="POST">
+          {{ csrf_field() }}
+           <div class="form-group">
+             <label for="">ชื่อร้าน</label>
+             <input type="text" class="form-control" id="shop_name" name="shop_name" required>
+           </div> 
+           
+           <div class="form-group">
+            <label for="">ที่อยู่</label>
+            <textarea id="shop_address" class="form-control" name="shop_address" rows="3" required></textarea>
+          </div>
         
-        <div class="form-group">
-          <label for="">ที่อยู่</label>
-          <input type="text" class="form-control" id="shop_address" name="shop_address" placeholder="ที่อยุ่" required>
-        </div>
-
-        <input type="submit" value="บันทึก">
-      </form>
-</body>
-</html>
+          <div class="for-group" align="center">
+            <input type="submit" value="บันทึก" class="btn btn-success">
+            <a href="/shop" class="btn btn-danger">กลับ</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+@endsection

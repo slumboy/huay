@@ -9,6 +9,7 @@
     <meta name="generator" content="Fab Dev v1">
     <title>Dashboard</title>    
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
