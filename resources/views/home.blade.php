@@ -15,7 +15,7 @@
                     <tr>
                         <th scope="col">ชื่อร้าน</th>
                         <th scope="col">ที่อยู่</th>
-                        <th scope="col"></th>
+                        <th scope="col">2</th>
                     </tr>
                 </thead>
                 <tbody>
