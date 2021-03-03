@@ -9,7 +9,27 @@
     <meta name="generator" content="Fap Dev v.1">
     <title>Lottery v1</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+<<<<<<< HEAD
     <link href="/css/styles.css" rel="stylesheet">
+=======
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link href="/css/dashboard.css" rel="stylesheet">
+>>>>>>> origin/main
   </head>
   <body>
     
