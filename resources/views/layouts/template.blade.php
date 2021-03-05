@@ -14,16 +14,21 @@
 
 <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Lottery</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Lottery</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Sign out</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('ออกจากระบบ') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> @csrf </form>
             </li>
         </ul>
     </header>
@@ -33,29 +38,22 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
-                                <span data-feather="home"></span>
-                                หน้ารแรก
-                            </a>
+                            <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้ารแรก</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/shop">
-                                <span data-feather="file"></span>
-                                จัดการร้านค้า
-                            </a>
+                            <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="shopping-cart"></span>
-                                เพิ่มรายการลอตเตอรี่
-                            </a>
+                            <a class="nav-link @yield('lottery')" href="#"><span data-feather="shopping-cart"></span>เพิ่มรายการลอตเตอรี่</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
-    @yield('content')
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        @yield('content')
+    </main>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 

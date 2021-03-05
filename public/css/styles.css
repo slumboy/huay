@@ -98,3 +98,15 @@ body {
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
   }
+ .navbar-nav {
+    flex-direction: row;
+}
+ .navbar-nav .nav-link {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+.form-control:focus {
+ 
+  outline: 0;
+  box-shadow: unset
+}
