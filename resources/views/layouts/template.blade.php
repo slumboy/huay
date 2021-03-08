@@ -33,7 +33,7 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
+                            <a class="nav-link active" aria-current="page" href="/home">
                                 <span data-feather="home"></span>
                                 หน้ารแรก
                             </a>
@@ -45,7 +45,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/lotto/create">
                                 <span data-feather="shopping-cart"></span>
                                 เพิ่มรายการลอตเตอรี่
                             </a>
@@ -55,7 +55,9 @@
             </nav>
         </div>
     </div>
-    @yield('content')
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+         @yield('content')
+    </main>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 
