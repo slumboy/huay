@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Lotto;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Lottos as ModelsLottos;
+use App\Models\Shop;
 
 class LottoController extends Controller
 {
@@ -14,7 +16,7 @@ class LottoController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,9 +26,19 @@ class LottoController extends Controller
      */
     public function create()
     {
-        return view("Lotto.addLotto");
-    }
 
+        $shops = Shop::all();       
+        
+        return view("Lotto.addLotto",compact('shops'));
+    }
+    public function getLottoWithDate ($lotto_date,$shop_id){
+      $data =   ModelsLottos::where('lot_date',$lotto_date)
+        ->where('shop_id',$shop_id)
+        ->orderBy('created_at','desc')
+        ->limit(100)
+        ->get();
+        return response()->json(['message' => 'insert success',"data"=> $data] );
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +47,17 @@ class LottoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       ModelsLottos::create([
+            'lot_date' => $request->lot_date,
+            'lotto_number' => $request->lotto_number,
+            'shop_id' => $request->shop_id          
+        ]);
+        return response()->json(['message' => 'insert success'],200);
+        // $lotto = new Lottos;
+        // $lotto->lot_date = $request->lot_date;
+        // $lotto->lotto_number = $request->lotto_number;
+        // $lotto->shop_id = $request->shop_id;
+        // $lotto->save();
     }
 
     /**
@@ -80,6 +102,9 @@ class LottoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lotto = ModelsLottos::find($id);
+        $lotto->delete();
+
+        return response()->json(['message' => 'insert success'],200);
     }
 }
