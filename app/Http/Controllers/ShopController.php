@@ -28,7 +28,12 @@ class ShopController extends Controller
     public function create()
     {
         //
-        return view('shop.create');
+        $shop = Shop::max("id");
+        $number = 0;
+        $number = $shop + 1;
+        $number = str_pad($number,4,"0",STR_PAD_LEFT);
+        // dd($shop);
+        return view('shop.create',["shop_number"=>$number]);
     }
 
     /**
@@ -42,7 +47,8 @@ class ShopController extends Controller
         //
         $shop = Shop::create([
             'shop_name' => $request->shop_name,
-            'shop_address' => $request->shop_address
+            'shop_address' => $request->shop_address,
+            'shop_number' => $request->shop_number
         ]);
 
         return redirect('/shop');
