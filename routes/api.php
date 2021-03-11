@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Lotto\LottoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::post('add-lotto', [LottoController::class, 'store']);
+Route::get('getLottoWithDate/{lotto_date}/{shop_id}', [LottoController::class, 'getLottoWithDate']);
+Route::delete('delete-lotto/{id}', [LottoController::class, 'destroy']);

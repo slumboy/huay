@@ -11,7 +11,7 @@
                 {{ csrf_field() }}
                 <div class="form-group mb-3">
                     <label for="shop_number" class="mb-2">รหัสร้าน</label>
-                    <input type="text" class="form-control" id="shop_number" name="shop_number" placeholder="ป้าศรี001" required>
+                    <input type="text" class="form-control" id="shop_number" name="shop_number" value="{{ "S".$shop_number }}" placeholder="ป้าศรี001" required readonly>
                 </div>
                 <div class="form-group mb-3">
                     <label for="shop_name" class="mb-2">ชื่อร้าน</label>

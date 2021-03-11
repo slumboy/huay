@@ -20,6 +20,7 @@
             <tbody>
                 @foreach ($shops as $shop)
                     <tr>
+                        <td>{{ $shop->shop_number}}</td>
                         <td>{{ $shop->shop_name }}</td>
                         <td>{{ $shop->shop_address }}</td>
                         <td align="center">
