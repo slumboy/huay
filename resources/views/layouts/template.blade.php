@@ -55,6 +55,8 @@
         @yield('content')
     </main>
     <script src="/js/bootstrap.bundle.min.js"></script>
+
+    @yield('script')
 </body>
 
 </html>
