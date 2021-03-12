@@ -8,6 +8,8 @@
     <meta name="author" content="Fap Dev">
     <meta name="generator" content="Fap Dev v.1">
     <title>Lottery v1</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
 </head>
