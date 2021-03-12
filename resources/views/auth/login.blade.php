@@ -9,6 +9,8 @@
     <script src="http://127.0.0.1:8000/js/app.js" defer></script>
     <link href="http://127.0.0.1:8000/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -27,6 +29,7 @@
         html,
         body {
             height: 100%;
+            font-family: 'Prompt', sans-serif;
         }
 
         body {
