@@ -29,14 +29,13 @@ Route::get('lotto/create', [LottoController::class, 'create']);
 Route::get('lotto/list', [LottoController::class, 'index']);
 #endregion
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::get('/', [CompareLottery::class, 'home'])->name('home');
+Route::get('/home', [CompareLottery::class, 'home'])->name('home');
 Route::resource('/shop',ShopController::class)->middleware('auth');
 Route::get('/compareMain', [CompareLottery::class, 'index'])->name('index');
 
 
-Route::resource('/shop',ShopController::class)->middleware('auth'); 
-Route::resource('/profile',EditProfileController::class)->middleware('auth'); 
- 
+Route::resource('/shop',ShopController::class)->middleware('auth');
+Route::resource('/profile',EditProfileController::class)->middleware('auth');
+
 
