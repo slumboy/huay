@@ -52,6 +52,9 @@ doctype html>
                             <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="shopping-cart"></span>เพิ่มรายการลอตเตอรี่</a>
 
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('compareLottery')" href="/compareMain"><span data-feather="shopping-cart"></span>compareLottery</a>
+                        </li>
                     </ul>
                 </div>
             </nav>

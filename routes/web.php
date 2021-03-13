@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompareLottery;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Lotto\LottoController;
 use Illuminate\Support\Facades\Auth;
@@ -23,11 +24,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-#rgion Lotto Section 
+#rgion Lotto Section
 Route::get('lotto/create', [LottoController::class, 'create']);
 #endregion
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/shop',ShopController::class)->middleware('auth');
- 
+Route::get('/compareMain', [CompareLottery::class, 'index'])->name('index');
+
