@@ -25,6 +25,9 @@ class HomeController extends Controller
     public function index()
     {
         $shops = Shop::all();
+        
+        //for mock
+        $chk_view = false;
 
         return view('home', compact('shops'));
     }
