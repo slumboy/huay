@@ -45,7 +45,7 @@ class CompareLottery extends Controller
         ->join('lottos', 'lottos.shop_id', '=', 'shops.id')
         ->select('lottos.lotto_number',DB::raw('COUNT(lottos.shop_id) as lottery_number'))
         ->groupBy('lottos.lotto_number')
-        ->havingRaw(DB::raw('lottery_number >1'))
+        ->havingRaw(DB::raw('lottery_number > 1'))
         ->get();
 
         foreach ($data as $key => $value) {
@@ -56,10 +56,21 @@ class CompareLottery extends Controller
             ->join('lottos', 'lottos.shop_id', '=', 'shops.id')
             ->select('shops.id','shops.shop_name','lottos.lotto_number',DB::raw('COUNT(lottos.lotto_number) as cnt'))
             ->where('lottos.lotto_number',$value->lotto_number)
+            ->where('lottos.shop_id','<>','1')
             ->groupBy('shops.id','shops.shop_name','lottos.lotto_number')
             ->get();
 
+              $myStore = DB::table('shops')
+            ->join('lottos', 'lottos.shop_id', '=', 'shops.id')
+            ->select(DB::raw('COUNT(lottos.lotto_number) as cnt'))
+            ->where('lottos.lotto_number',$value->lotto_number)
+            ->where('lottos.shop_id','1')
+            ->groupBy('lottos.lotto_number')
+            ->first();
+
+
             $obj[$key]["store"] = $arr;
+            $obj[$key]["myStore"] = $myStore;
         }
 
         // dd($obj);
