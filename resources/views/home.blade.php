@@ -12,9 +12,9 @@
                   <h5 class="card-title">134465</h5>
                  </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">ร้าน item</li>
-                  <li class="list-group-item">ร้าน second item</li>
-                  <li class="list-group-item">ร้าน third item</li>
+                  <li class="list-group-item">ร้าน item <span class="badge rounded-pill bg-warning text-dark">1</span></li>
+                  <li class="list-group-item">ร้าน second item <span class="badge rounded-pill bg-warning text-dark">10</span></li>
+                  <li class="list-group-item">ร้าน third item <span class="badge rounded-pill bg-warning text-dark">5</span></li>
                 </ul>
               </div>
         </div>
@@ -24,9 +24,9 @@
                   <h5 class="card-title">134465</h5>
                  </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">ร้าน item</li>
-                  <li class="list-group-item">ร้าน second item</li>
-                  <li class="list-group-item">ร้าน third item</li>
+                  <li class="list-group-item">ร้าน item <span class="badge rounded-pill bg-warning text-dark">99</span></li>
+                  <li class="list-group-item">ร้าน second item <span class="badge rounded-pill bg-warning text-dark">99</span></li>
+                  <li class="list-group-item">ร้าน third item <span class="badge rounded-pill bg-warning text-dark">99</span></li>
                 </ul>
               </div>
         </div>
@@ -36,9 +36,9 @@
                   <h5 class="card-title">134465</h5>
                  </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">ร้าน item</li>
-                  <li class="list-group-item">ร้าน second item</li>
-                  <li class="list-group-item">ร้าน third item</li>
+                  <li class="list-group-item">ร้าน item <span class="badge rounded-pill bg-warning text-dark">99</span></li>
+                  <li class="list-group-item">ร้าน second item <span class="badge rounded-pill bg-warning text-dark">99</span></li>
+                  <li class="list-group-item">ร้าน third item <span class="badge rounded-pill bg-warning text-dark">99</span></li>
                 </ul>
               </div>
         </div>

@@ -1,4 +1,4 @@
-doctype html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -57,7 +57,7 @@ doctype html>
             </nav>
         </div>
     </div>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 p-3">
 
          @yield('content')
 

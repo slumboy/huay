@@ -15,7 +15,7 @@
                 <div class="col-md-4 ">
                     <label for="shop_id" class="form-label">เลือกร้าน</label>
                     <select class="form-select" id="shop_id" onchange="onShopChange()" required>
-                        <option value="">โปรดเลือกร้าน</option>
+                        {{-- <option value="">โปรดเลือกร้าน</option> --}}
                         @foreach ($shops as $shop)
                             <option value="{{ $shop->id }}"> {{ $shop->shop_number }} : {{ $shop->shop_name }}
                             </option>
@@ -42,24 +42,6 @@
         </div>
     </div>
     <hr>
-    {{-- <div class="row">
-        @for ($i = 0; $i < 100; $i++)
-            <div class="col-md-3 mt-2">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row p-0 m-0 ">
-                            <div class="col-10">
-                                {{ $i }}25896
-                            </div>
-                            <div class="col-2">
-                                <button type="button" class="btn-close" aria-label="Close"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endfor
-    </div> --}}
     <div id="dataSection" class="row"></div>
 
 @endsection
