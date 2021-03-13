@@ -41,12 +41,21 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้ารแรก</a>
+=======
+                        <li class="nav-item"> 
+                            <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้าแรก</a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link @yield('profile')" aria-current="page" href="/profile/1"><span data-feather="profile"></span>แก้ไข Profile</a>
+>>>>>>> tavchai
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
                         </li>
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="lottery-create"></span>เพิ่มรายการลอตเตอรี่</a>
                         </li>
@@ -55,6 +64,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('compareLottery')" href="/compareMain"><span data-feather="shopping-cart"></span>compareLottery</a>
+=======
+                        <li class="nav-item"> 
+                            <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="shopping-cart"></span>เพิ่มรายการลอตเตอรี่</a>
+>>>>>>> tavchai
                         </li>
                     </ul>
                 </div>
