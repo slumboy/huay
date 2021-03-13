@@ -1,4 +1,4 @@
-doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -11,12 +11,12 @@ doctype html>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/assets/fontawesome/css/all.css') }}">
     <link href="/css/styles.css" rel="stylesheet">
-
 </head>
 
 <body>
-
+    <div class="loadding"><ul><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Lottery</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
@@ -24,7 +24,7 @@ doctype html>
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <ul class="navbar-nav px-3">
+        <ul class="navbar-nav px-3 mobile">
             <li class="nav-item">
                 <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
             </li>
@@ -42,17 +42,13 @@ doctype html>
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-
                             <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้ารแรก</a>
-
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
                         </li>
                         <li class="nav-item">
-
                             <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="shopping-cart"></span>เพิ่มรายการลอตเตอรี่</a>
-
                         </li>
                     </ul>
                 </div>
@@ -67,6 +63,7 @@ doctype html>
 
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
     @yield('script')
 
 </body>
