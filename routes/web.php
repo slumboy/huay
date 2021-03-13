@@ -31,12 +31,12 @@ Route::get('lotto/list', [LottoController::class, 'index']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-<<<<<<< HEAD
+
 Route::resource('/shop',ShopController::class)->middleware('auth');
 Route::get('/compareMain', [CompareLottery::class, 'index'])->name('index');
 
-=======
+
 Route::resource('/shop',ShopController::class)->middleware('auth'); 
 Route::resource('/profile',EditProfileController::class)->middleware('auth'); 
  
->>>>>>> tavchai
+
