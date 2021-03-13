@@ -29,5 +29,6 @@ Route::get('lotto/create', [LottoController::class, 'create']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::resource('/shop',ShopController::class)->middleware('auth');
+Route::resource('/shop',ShopController::class)->middleware('auth'); 
+Route::resource('/profile',EditProfileController::class)->middleware('auth'); 
  
