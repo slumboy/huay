@@ -20,3 +20,5 @@ Route::post('add-lotto', [LottoController::class, 'store']);
 Route::get('getLottoWithDate/{lotto_date}/{shop_id}', [LottoController::class, 'getLottoWithDate']);
 Route::delete('delete-lotto/{id}', [LottoController::class, 'destroy']);
 Route::post('compareLottery', [CompareLottery::class, 'compareLottoNumber']);
+Route::post('home', [CompareLottery::class, 'home']);
+Route::post('/', [CompareLottery::class, 'home']);
