@@ -42,17 +42,16 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-
                             <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้ารแรก</a>
-
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
                         </li>
                         <li class="nav-item">
-
-                            <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="shopping-cart"></span>เพิ่มรายการลอตเตอรี่</a>
-
+                            <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="lottery-create"></span>เพิ่มรายการลอตเตอรี่</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('lottery-list')" href="/lotto/list"><span data-feather="lottery-list"></span>รายการลอตเตอรี่</a>
                         </li>
                     </ul>
                 </div>

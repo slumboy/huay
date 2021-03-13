@@ -25,6 +25,7 @@ Auth::routes();
 
 #rgion Lotto Section 
 Route::get('lotto/create', [LottoController::class, 'create']);
+Route::get('lotto/list', [LottoController::class, 'index']);
 #endregion
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

@@ -1,4 +1,15 @@
 
+.lotto-shop-list{
+  cursor: pointer;
+}
+.lotto-shop-list-avtive{
+  background-color: #1987542b;
+}
+.lotto-shop-list:hover{
+  /* box-shadow: 2px 2px 2px 2px #4e4e4e; */
+  box-shadow: 2px 2px 5px -3px #4e4e4e;
+}
+
 body {
     font-size: .875rem;
     font-family: 'Prompt', sans-serif;
