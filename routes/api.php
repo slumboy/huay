@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompareLottery;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Lotto\LottoController;
@@ -23,4 +24,5 @@ Route::get('getLottoWithDate/{lotto_date}/{shop_id}', [LottoController::class, '
 Route::delete('delete-lotto/{id}', [LottoController::class, 'destroy']);
 Route::post('compareLottery', [CompareLottery::class, 'compareLottoNumber']);
 Route::post('home', [CompareLottery::class, 'home']);
-Route::post('/', [CompareLottery::class, 'home']);
+// Route::post('/', [CompareLottery::class, 'home']);
+Route::get('getListShop',[CompareLottery::class ,'getListShop']);
