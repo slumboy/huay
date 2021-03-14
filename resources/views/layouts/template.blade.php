@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-=======
-<!doctype html>
->>>>>>> 5a1684512858a348a206f310b82b5f81e17c9ff8
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -30,7 +26,7 @@
         </button>
         <ul class="navbar-nav px-3 mobile">
             <li class="nav-item">
-                <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                <a class="nav-link" href="/profile/1">{{ Auth::user()->name }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -46,21 +42,12 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้ารแรก</a>
-<<<<<<< HEAD
-=======
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @yield('profile')" href="/profile/1"><span data-feather="file"></span>แก้ไข Profile</a>
->>>>>>> 5a1684512858a348a206f310b82b5f81e17c9ff8
+                            <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้าแรก</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
-                            <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="shopping-cart"></span>เพิ่มรายการลอตเตอรี่</a>
-=======
                             <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="lottery-create"></span>เพิ่มรายการลอตเตอรี่</a>
                         </li>
                         <li class="nav-item">
@@ -68,7 +55,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('compareLottery')" href="/compareMain"><span data-feather="shopping-cart"></span>compareLottery</a>
->>>>>>> 5a1684512858a348a206f310b82b5f81e17c9ff8
                         </li>
                     </ul>
                 </div>
