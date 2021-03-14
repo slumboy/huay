@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lottos as ModelsLottos;
 use App\Models\Shop;
+use Facade\FlareClient\View;
+use Illuminate\Support\Facades\DB;
 
 class LottoController extends Controller
 {
@@ -16,7 +18,7 @@ class LottoController extends Controller
      */
     public function index()
     {
-        
+        return view("Lotto.lotto-list");
     }
 
     /**
@@ -31,6 +33,45 @@ class LottoController extends Controller
         
         return view("Lotto.addLotto",compact('shops'));
     }
+    public function SearchLottoByNo($lotto_no){
+        if($lotto_no == 'all'){
+            $lotto = DB::table('shops')
+            ->join('lottos', 'lottos.shop_id', '=', 'shops.id')
+            ->select('shops.id','shops.shop_name',DB::raw('count(lottos.id) as cnt'))      
+            ->where('lottos.deleted_at',null)     
+            ->groupBy('shops.id','shops.shop_name')
+            ->get();
+            return response()->json(['message' => 'success',"data"=> $lotto] );
+        }
+
+        $lotto = DB::table('shops')
+        ->join('lottos', 'lottos.shop_id', '=', 'shops.id')
+        ->select('shops.id','shops.shop_name',DB::raw('count(lottos.id) as cnt'))
+        ->where('lottos.deleted_at',null)
+        ->where('lottos.lotto_number','like','%'.$lotto_no.'%')
+        ->groupBy('shops.id','shops.shop_name','lottos.lotto_number')
+        ->get();
+        return response()->json(['message' => 'success',"data"=> $lotto] );
+    }
+
+
+    public function getLottoList ($lotto_number,$shop_id){
+        if($lotto_number == 'all'){
+            $data =   ModelsLottos::where('shop_id',$shop_id)
+            ->orderBy('created_at','desc')
+            ->get();
+            return response()->json(['message' => 'insert success',"data"=> $data] );
+        }
+        
+        $data =   ModelsLottos::where('lotto_number',$lotto_number)
+          ->where('shop_id',$shop_id)
+          ->orderBy('created_at','desc')
+          //->limit(100)
+          ->get();
+          return response()->json(['message' => 'insert success',"data"=> $data] );
+      }
+
+
     public function getLottoWithDate ($lotto_date,$shop_id){
       $data =   ModelsLottos::where('lot_date',$lotto_date)
         ->where('shop_id',$shop_id)

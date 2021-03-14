@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Shop;
-use DB;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash; 
 
-class ShopController extends Controller
+class EditProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,10 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $shops = Shop::all();
-     
-        return view('shop.index', compact('shops'));
+        //
+       
     }
- 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -28,12 +27,6 @@ class ShopController extends Controller
     public function create()
     {
         //
-        $shop = Shop::max("id");
-        $number = 0;
-        $number = $shop + 1;
-        $number = str_pad($number,4,"0",STR_PAD_LEFT);
-        // dd($shop);
-        return view('shop.create',["shop_number"=>$number]);
     }
 
     /**
@@ -45,13 +38,6 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         //
-        $shop = Shop::create([
-            'shop_name' => $request->shop_name,
-            'shop_address' => $request->shop_address,
-            'shop_number' => $request->shop_number
-        ]);
-
-        return redirect('/shop');
     }
 
     /**
@@ -62,8 +48,9 @@ class ShopController extends Controller
      */
     public function show($id)
     {
-        
- 
+        //
+        $user = User::find($id);  
+        return view('profile.editprofile',compact('user')); 
     }
 
     /**
@@ -75,9 +62,6 @@ class ShopController extends Controller
     public function edit($id)
     {
         //
-        $shop = Shop::find($id);
-
-        return view('shop.edit',compact('shop'));
     }
 
     /**
@@ -90,12 +74,13 @@ class ShopController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $shop = Shop::find($id);
-        $shop->shop_name = $request->shop_name;
-        $shop->shop_address = $request->shop_address;
-        $shop->update();
+        $user = User::find($id);  
+ 
+        $user->name = $request->name;
+        $user->password = Hash::make($request->password);
+        $user->update();
 
-        return redirect('/shop');
+        return  redirect("/home");
     }
 
     /**
@@ -107,9 +92,5 @@ class ShopController extends Controller
     public function destroy($id)
     {
         //
-        $shop = Shop::find($id);
-        $shop->delete();
-
-        return redirect('/shop');
     }
 }

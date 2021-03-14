@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+<!doctype html>
+>>>>>>> 5a1684512858a348a206f310b82b5f81e17c9ff8
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -43,19 +47,35 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้ารแรก</a>
+<<<<<<< HEAD
+=======
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('profile')" href="/profile/1"><span data-feather="file"></span>แก้ไข Profile</a>
+>>>>>>> 5a1684512858a348a206f310b82b5f81e17c9ff8
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="shopping-cart"></span>เพิ่มรายการลอตเตอรี่</a>
+=======
+                            <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="lottery-create"></span>เพิ่มรายการลอตเตอรี่</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('lottery-list')" href="/lotto/list"><span data-feather="lottery-list"></span>รายการลอตเตอรี่</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('compareLottery')" href="/compareMain"><span data-feather="shopping-cart"></span>compareLottery</a>
+>>>>>>> 5a1684512858a348a206f310b82b5f81e17c9ff8
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 p-3">
 
          @yield('content')
 
