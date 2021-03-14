@@ -39,15 +39,6 @@ class HomeController extends Controller
         $data =  DB::table('lottos')->select(DB::raw('count(*) as lotto_number_group, lotto_number'))
                      ->groupBy('lotto_number')
                      ->get();
-
-// foreach ($data as $key) {
-//             echo "<pre>";
-//             print_r($key);
-//             echo "</pre>";
-//             echo "lotto_number_group => ".$key->lotto_number_group;
-//             echo "lotto_number => ".$key->lotto_number;
-//         }
-
          return view('compare.compareLotto', compact('data'));
         // dd($data);
         // return response()->json(['message' => 'insert success',"data"=> $data] );

@@ -41,6 +41,9 @@ class CompareLottery extends Controller
     {
        $obj = array();
         $store = array();
+
+        $shops = DB::table('shops')->select('id','shop_name','shop_number')->get();
+
         $data = DB::table('shops')
         ->join('lottos', 'lottos.shop_id', '=', 'shops.id')
         ->select('lottos.lotto_number',DB::raw('COUNT(lottos.shop_id) as lottery_number'))
@@ -72,8 +75,13 @@ class CompareLottery extends Controller
             $obj[$key]["store"] = $arr;
             $obj[$key]["myStore"] = $myStore;
         }
-
-        // dd($obj);
-        return view('home', compact('obj'));
+        return view('home', array('obj'=>$obj,'shops'=>$shops));
     }
+
+    public function getListShop(){
+        $shops = DB::table('shops')->select("select * from shops")->get();
+        dd($shops);
+        // return view('home', compact('shops'));
+    }
+
 }
