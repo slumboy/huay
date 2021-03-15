@@ -58,14 +58,14 @@ class LottoController extends Controller
     public function getLottoList ($lotto_number,$shop_id){
         if($lotto_number == 'all'){
             $data =   ModelsLottos::where('shop_id',$shop_id)
-            ->orderBy('created_at','desc')
+            ->orderBy('lotto_number','asc')
             ->get();
             return response()->json(['message' => 'insert success',"data"=> $data] );
         }
         
         $data =   ModelsLottos::where('lotto_number',$lotto_number)
           ->where('shop_id',$shop_id)
-          ->orderBy('created_at','desc')
+          ->orderBy('lotto_number','asc')
           //->limit(100)
           ->get();
           return response()->json(['message' => 'insert success',"data"=> $data] );
