@@ -26,7 +26,7 @@
         </button>
         <ul class="navbar-nav px-3 mobile">
             <li class="nav-item">
-                <a class="nav-link" href="/profile/1">{{ Auth::user()->name }}</a>
+                <a class="nav-link" href="/profile/2">{{ Auth::user()->name }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -43,7 +43,7 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้าแรก</a>
-                        </li>
+                        </li>  
                         <li class="nav-item">
                             <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
                         </li>

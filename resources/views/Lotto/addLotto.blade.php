@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-3">
                     <label for="lotto_number" class="form-label">กรอกหมายเลข</label>
-                    <input type="text" class="form-control" id="lotto_number" maxlength="6" minlength="6"
+                    <input type="text" class="form-control" id="lotto_number" minlength="6"
                         placeholder="กรอกหมายเลข" required>
                 </div>
                 <div class="col-md-3 pt-1">
@@ -56,13 +56,18 @@
             if (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode == 13) {
                 return true;
             }
+ 
             return false;
         });
+
+        $("#lot_date").change(function (){
+            $('#lotto_number').val("");
+        })
 
         function getLottoWithDate() {
             var shop_id = $('#shop_id').val();
             var lot_date = $('#lot_date').val();
-            console.log('lot_date : ', lot_date);
+            // console.log('lot_date : ', lot_date);
             if (lot_date == null || lot_date == "") {
                 alert("โปรดเลือกวันที่");
                 return;
@@ -115,28 +120,44 @@
 
         $('#LottoForm').submit(function(e) {
             e.preventDefault() // prevent the form from 'submitting'
-
+            var i = 0;
             var lot_date = $('#lot_date').val();
             var lotto_number = $('#lotto_number').val();
             var shop_id = $('#shop_id').val();
-            let dataReq = {
-                lot_date: lot_date,
-                lotto_number: lotto_number,
-                shop_id: shop_id,
-            };
-            $.ajax({
-                url: "{{ url('api/add-lotto') }}",
-                type: "POST",
-                data: dataReq,
-                success: function(res) {
-                    $('#lotto_number').val(null);
-                    $('#lotto_number').focus();
-                    getLottoWithDate();
-                },
-                error: function() {
-                    alert('บันทึกไม่สำเร็จ');
+
+            if(lotto_number.length > 6){
+                lotto_number = lotto_number.substring(6);
+
+                if (lotto_number.length != 6) {
+                    i++;
                 }
-            });
+            }
+
+
+            if (i == 0) {
+                let dataReq = {
+                    lot_date: lot_date,
+                    lotto_number: lotto_number,
+                    shop_id: shop_id,
+                };
+                $.ajax({
+                    url: "{{ url('api/add-lotto') }}",
+                    type: "POST",
+                    data: dataReq,
+                    success: function(res) {
+                        $('#lotto_number').val(null);
+                        $('#lotto_number').focus();
+                        getLottoWithDate();
+                    },
+                    error: function() {
+                        alert('บันทึกไม่สำเร็จ');
+                    }
+                });
+            }else{
+                alert('กรุณาตรวจสอบ หมายเลข อีกครั้ง');
+                $('#lotto_number').val("");
+            }
+            
         });
 
         function onDelete(id) {
