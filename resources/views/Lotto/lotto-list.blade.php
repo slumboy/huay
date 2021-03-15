@@ -94,7 +94,7 @@
        }
 
        function searchLottoByShop (shop_id){
-        $("#_shopList>.col-md-4 >.card").removeClass("lotto-shop-list-avtive");
+        $("#_shopList>.col-md-3 >.card").removeClass("lotto-shop-list-avtive");
          $('#shop'+shop_id).addClass('lotto-shop-list-avtive');
         let apiUrl = "{{ url('api/get-lotto-list') }}";
         $.ajax({
