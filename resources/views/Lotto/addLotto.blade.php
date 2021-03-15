@@ -13,7 +13,7 @@
                 <div class="col-md-3 col-sm-6 date-picker">
                     <label for="lot_date" class="form-label">งวด วันที่</label>
                     <div class="datepicker date input-group p-0 shadow-sm">
-                        <input type="text" class="form-control reservationDate" id="lot_date" placeholder="เลือกวันที่" required value="{{ date('d/m/Y') }}">
+                        <input type="text" class="form-control reservationDate" id="lot_date" placeholder="เลือกวันที่" required value="{{ date('Y-m-d') }}">
                         <div class="input-group-append"><span class="input-group-text"><i class="far fa-calendar-alt"></i></span></div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
         $('.datepicker').datepicker({
             clearBtn: true,
             language:'th',
-            format: "dd/mm/yyyy"
+            format: "yyyy-mm-dd"
         });
         // FOR DEMO PURPOSE
         $('#reservationDate').on('change', function () {

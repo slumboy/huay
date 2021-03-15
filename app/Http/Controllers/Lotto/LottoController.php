@@ -8,6 +8,7 @@ use App\Models\Lottos as ModelsLottos;
 use App\Models\OldLottos;
 use App\Models\Shop;
 use Facade\FlareClient\View;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class LottoController extends Controller
