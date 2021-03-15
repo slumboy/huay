@@ -18,6 +18,7 @@ use App\Http\Controllers\Lotto\LottoController;
 
 
 Route::post('add-lotto', [LottoController::class, 'store']);
+Route::get('lotto-remove-all', [LottoController::class, 'onRemove']);
 Route::get('search-lotto-by-no/{lotto_no}', [LottoController::class, 'SearchLottoByNo']);
 Route::get('get-lotto-list/{lotto_number}/{shop_id}', [LottoController::class, 'getLottoList']);
 Route::get('getLottoWithDate/{lotto_date}/{shop_id}', [LottoController::class, 'getLottoWithDate']);
