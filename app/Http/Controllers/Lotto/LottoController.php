@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Lotto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lottos as ModelsLottos;
+use App\Models\OldLottos;
 use App\Models\Shop;
 use Facade\FlareClient\View;
 use Illuminate\Support\Facades\DB;
@@ -32,6 +33,14 @@ class LottoController extends Controller
         $shops = Shop::all();       
         
         return view("Lotto.addLotto",compact('shops'));
+    }
+    public function removeLotto()
+    {
+        return view("Lotto.remove");
+    }
+    public function onRemove (){
+        DB::select(DB::raw("insert into lottos_old select * from lottos")) ;
+        DB::select(DB::raw("TRUNCATE TABLE lottos_old"));
     }
     public function SearchLottoByNo($lotto_no){
         if($lotto_no == 'all'){

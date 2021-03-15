@@ -27,6 +27,7 @@ Auth::routes();
 #rgion Lotto Section
 Route::get('lotto/create', [LottoController::class, 'create'])->middleware('auth');
 Route::get('lotto/list', [LottoController::class, 'index'])->middleware('auth');
+Route::get('/remove', [LottoController::class, 'removeLotto'])->middleware('auth');
 #endregion
 
 Route::get('/', [CompareLottery::class, 'home'])->middleware('auth')->name('home');
