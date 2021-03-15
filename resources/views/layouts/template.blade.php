@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('deleteLottery') text-danger" href="/remove"><span data-feather="shopping-cart"></span>ลบข้อมูล Lottery ทั้งหมด</a>
+                            <a class="nav-link @yield('deleteLottery') text-danger" href="/remove"> <i class="fas fa-trash-alt"></i>  ลบข้อมูล Lottery ทั้งหมด</a>
                         </li>
                     </ul>
                 </div>
