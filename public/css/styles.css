@@ -35,10 +35,15 @@ body {
 }
 @media (max-width: 767.98px) {
     .sidebar {
-        top: 5rem;
+        top: 0;
     }
     .mobile {
         display: none;
+    }
+    .bg-guay{
+        background-color: #31f59a;
+        background: #31f59a;
+        background: linear-gradient(180deg, rgba(49,245,154,97%) 0%, rgba(40,163,182,0.5) 67%, rgba(60,36,50,0.5) 100%);
     }
 }
 .sidebar-sticky {
@@ -224,7 +229,8 @@ label {
     right: 0;
     bottom: 0;
     text-align: center;
-    background: rgb(247 245 245 / 96%);
+    background-color: #31f59a;
+    background: linear-gradient(180deg, rgba(49,245,154,97%) 0%, rgba(40,163,182,0.5) 67%, rgba(60,36,50,0.5) 100%);
     z-index: 9999;
 }
 .loadding ul {
@@ -277,4 +283,26 @@ label {
 }
 .loadding ul li:nth-child(6) {
     animation-delay: 0.5s;
+}
+
+/* date-picker */
+.datepicker td, .datepicker th {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.85rem;
+    padding: 5px;
+}
+.datepicker {
+    margin-bottom: 3rem;
+}
+.date-picker .input-group-text {
+    height: 100%;
+    cursor: pointer;
+}
+
+.date-picker input.form-control:focus {
+    box-shadow: none;
+}
+.date-picker .datepicker-dropdown {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }

@@ -25,10 +25,10 @@
                         <td>{{ $shop->shop_address }}</td>
                         <td align="center">
                             <form action="{{ url('/shop', [$shop->id]) }}" method="POST">
-                                <a href="/shop/{{ $shop->id }}/edit" class="btn btn-success">แก้ไข</a>
+                                <a href="/shop/{{ $shop->id }}/edit" class="btn btn-outline-success">แก้ไข</a>
                                 <input type="hidden" name="_method" value="delete">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="submit" value="ลบ" class="btn btn-danger">
+                                <input type="submit" value="ลบ" class="btn btn-outline-danger">
                             </form>
                         </td>
                     </tr>

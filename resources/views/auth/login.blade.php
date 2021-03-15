@@ -28,6 +28,7 @@
             background-color: #31f59a;
             background: #31f59a;
             height: 100%;
+            background: linear-gradient(180deg, rgba(49,245,154,97%) 0%, rgba(40,163,182,0.5) 67%, rgba(60,36,50,0.5) 100%);
         }
 
         .form-signin {
@@ -56,7 +57,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="username" class="visually-hidden">{{ __('Username') }}</label>
-                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="{{ __('Username') }}" value="{{ old('username') }}" >
+                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="{{ __('Username') }}" value="{{ old('username') }}" required>
                                     @error('username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
