@@ -1,36 +1,39 @@
 @extends('layouts.template')
 @section('lottery', 'active')
+@section('style')
+<link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+@endsection
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4>เพิ่มรายการลอตเตอรี่</h4>
     </div>
     <div class="row">
         <div class="col-12">
-            {{-- <form class="row g-3 "  > --}}
             <form class="row g-3 " id="LottoForm">
-                <div class="col-md-4 ">
+                <div class="col-md-3 col-sm-6 date-picker">
                     <label for="lot_date" class="form-label">งวด วันที่</label>
-                    <input type="date" class="form-control" id="lot_date" placeholder="เลือกวันที่" required>
+                    <div class="datepicker date input-group p-0 shadow-sm">
+                        <input type="text" class="form-control reservationDate" id="lot_date" placeholder="เลือกวันที่" required value="{{ date('d/m/Y') }}">
+                        <div class="input-group-append"><span class="input-group-text"><i class="far fa-calendar-alt"></i></span></div>
+                    </div>
                 </div>
-                <div class="col-md-4 ">
+                <div class="col-md-3 col-sm-6">
                     <label for="shop_id" class="form-label">เลือกร้าน</label>
                     <select class="form-select" id="shop_id" onchange="onShopChange()" required>
-                        {{-- <option value="">โปรดเลือกร้าน</option> --}}
+                        <option value="">โปรดเลือกร้าน</option>
                         @foreach ($shops as $shop)
                             <option value="{{ $shop->id }}"> {{ $shop->shop_number }} : {{ $shop->shop_name }}
                             </option>
                         @endforeach
                     </select>
-
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4 col-sm-6">
                     <label for="lotto_number" class="form-label">กรอกหมายเลข</label>
-                    <input type="text" class="form-control" id="lotto_number" maxlength="6" minlength="6"
-                        placeholder="กรอกหมายเลข" required>
+                    <input type="text" class="form-control" id="lotto_number" maxlength="6" minlength="6" placeholder="กรอกหมายเลข" required>
                 </div>
-                <div class="col-md-3 pt-1">
-                    <button class="btn btn-success mt-4" type="submit">เพิ่ม</button>
-                    {{-- <button class="btn btn-success mt-4" type="button" onclick="onSubmit()">เพิ่ม</button> --}}
+                <div class="col-md-2 col-sm-6">
+                    <label for="submit" class="form-label">&nbsp;</label>
+                    <button type="submit" class="btn btn-block btn-outline-success d-block" id="submit">เพิ่มข้อมูล</button>
                 </div>
             </form>
         </div>
@@ -47,8 +50,20 @@
 @endsection
 
 @section('script')
-
+    <script src="/js/bootstrap-datepicker.min.js"></script>
     <script>
+       !function(a){a.fn.datepicker.dates.th={days:["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัส","ศุกร์","เสาร์","อาทิตย์"],daysShort:["อา","จ","อ","พ","พฤ","ศ","ส","อา"],daysMin:["อา","จ","อ","พ","พฤ","ศ","ส","อา"],months:["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"],monthsShort:["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."],today:"วันนี้"}}(jQuery);
+        $('.datepicker').datepicker({
+            clearBtn: true,
+            language:'th',
+            format: "dd/mm/yyyy"
+        });
+        // FOR DEMO PURPOSE
+        $('#reservationDate').on('change', function () {
+            var pickedDate = $('input').val();
+            $('#reservationDate').html(pickedDate);
+            console.log(pickedDate);
+        });
         function onShopChange() {
             getLottoWithDate();
         }
@@ -65,7 +80,7 @@
             console.log('lot_date : ', lot_date);
             if (lot_date == null || lot_date == "") {
                 alert("โปรดเลือกวันที่");
-                return;
+                return false;
             }
 
             let apiUrl = "{{ url('api/getLottoWithDate') }}";
