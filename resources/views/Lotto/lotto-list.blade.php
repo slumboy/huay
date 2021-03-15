@@ -13,13 +13,13 @@
           <input type="number" class="form-control" id="lotto_number" placeholder="ค้นหาหมายเลขลอตเตอรี่" required>
         </div>
         <div class="col-auto">
-          <button type="submit" class="btn btn-success mb-3">ค้นหา</button>
+          <button type="submit" class="btn btn-block btn-outline-success mb-3">ค้นหา</button>
         </div>
       </form>
 
       <div class="row mt-2">
         <div class="col-12">
-            <h5>รายชื่อร้านค้า <a onclick="getData()" style="font-size: 12px; color: #828282;    cursor: pointer;"> <i class="fas fa-sync"></i>โหลดข้อมูลใหม่</a></h5>
+            <h5>รายชื่อร้านค้า <a onclick="getData()" style="font-size: 12px; color: #828282;    cursor: pointer;"> <i class="fas fa-sync"></i> โหลดข้อมูลใหม่</a></h5>
         </div>
     </div>
     <hr>
