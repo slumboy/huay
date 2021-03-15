@@ -25,13 +25,13 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <ul class="navbar-nav px-3 mobile">
+        <ul class="navbar-nav px-3 desktop">
             <li class="nav-item">
-                <a class="nav-link" href="/profile/{{ Auth::user()->id }}">{{ Auth::user()->name }}</a>
+                <a class="nav-link" href="/profile/{{ Auth::user()->id }}"><i class="far fa-id-badge"></i> {{ Auth::user()->name }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    {{ __('ออกจากระบบ') }}
+                    <i class="fas fa-sign-out-alt"></i> {{ __('ออกจากระบบ') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> @csrf </form>
             </li>
@@ -43,19 +43,27 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link @yield('home')" aria-current="page" href="/"><span data-feather="home"></span>หน้าแรก</a>
+                            <a class="nav-link @yield('home')" aria-current="page" href="/"><i class="fas fa-home"></i> หน้าแรก</a>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link @yield('shop')" href="/shop"><span data-feather="file"></span>จัดการร้านค้า</a>
+                            <a class="nav-link @yield('shop')" href="/shop"><i class="fas fa-store"></i> จัดการร้านค้า</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('lottery')" href="/lotto/create"><span data-feather="lottery-create"></span>เพิ่มรายการลอตเตอรี่</a>
+                            <a class="nav-link @yield('lottery')" href="/lotto/create"><i class="far fa-plus-square"></i> เพิ่มรายการลอตเตอรี่</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('lottery-list')" href="/lotto/list"><span data-feather="lottery-list"></span>รายการลอตเตอรี่</a>
+                            <a class="nav-link @yield('lottery-list')" href="/lotto/list"><i class="fas fa-list-ol"></i> รายการลอตเตอรี่</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('compareLottery')" href="/compareMain"><span data-feather="shopping-cart"></span>compareLottery</a>
+                            <a class="nav-link @yield('compareLottery')" href="/compareMain"><i class="fas fa-greater-than-equal"></i> เปรียบเทียบ Lottery</a>
+                        </li>
+                        <li class="nav-item mobile">
+                            <a class="nav-link" href="/profile/{{ Auth::user()->id }}"><i class="far fa-id-badge"></i> {{ Auth::user()->name }}</a>
+                        </li>
+                        <li class="nav-item mobile">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt"></i> {{ __('ออกจากระบบ') }}
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('deleteLottery') text-danger" href="/remove"><span data-feather="shopping-cart"></span>ลบข้อมูล Lottery ทั้งหมด</a>

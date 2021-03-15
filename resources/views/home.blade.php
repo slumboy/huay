@@ -21,14 +21,11 @@
         @foreach ($obj as $val)
         <div class="col-md-4 mt-4">
             <div class="card" >
-                <div class="card-body">
-                  <h5 class="card-title">{{$val['lotto_number']}}
-                <span class="badge rounded-pill bg-success ">{{$val['myStore']->cnt}} ใบ</span>
-                </h5>
-                 </div>
-                <ul class="list-group list-group-flush">
+                <div class="card-body"><h5 class="card-title">{{$val['lotto_number']}} <span class="badge rounded-pill bg-success float-end">{{$val['myStore']->cnt}} ใบ</span></h5></div>
+                <ul class="list-group">
                     @foreach ($val['store'] as $item)
-                    <li class="list-group-item">{{$item->shop_name}}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{$item->shop_name}}
                         <span class="badge rounded-pill bg-warning text-dark">{{$item->cnt}} ใบ</span>
                     </li>
                     @endforeach

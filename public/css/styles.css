@@ -33,17 +33,26 @@ body {
 .navbar-dark .navbar-toggler {
     color: rgba(255, 255, 255, 0);
 }
+.mobile {
+    display: none;
+}
+.fas,.far{
+    font-size: 21px;
+}
 @media (max-width: 767.98px) {
     .sidebar {
         top: 0;
     }
     .mobile {
+        display: block;
+    }
+    .desktop {
         display: none;
     }
     .bg-guay{
         background-color: #31f59a;
         background: #31f59a;
-        background: linear-gradient(180deg, rgba(49,245,154,97%) 0%, rgba(40,163,182,0.5) 67%, rgba(60,36,50,0.5) 100%);
+        background: linear-gradient(180deg, rgba(49,245,154,97%) 100%, rgba(40,163,182,0.5) 100%, rgba(60,36,50,0.5) 100%);
     }
 }
 .sidebar-sticky {
