@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Lotto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lottos as ModelsLottos;
+use App\Models\OldLottos;
 use App\Models\Shop;
 use Facade\FlareClient\View;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class LottoController extends Controller
@@ -33,6 +35,14 @@ class LottoController extends Controller
         
         return view("Lotto.addLotto",compact('shops'));
     }
+    public function removeLotto()
+    {
+        return view("Lotto.remove");
+    }
+    public function onRemove (){
+        DB::select(DB::raw("insert into lottos_old select * from lottos")) ;
+        DB::select(DB::raw("TRUNCATE TABLE lottos_old"));
+    }
     public function SearchLottoByNo($lotto_no){
         if($lotto_no == 'all'){
             $lotto = DB::table('shops')
@@ -58,14 +68,14 @@ class LottoController extends Controller
     public function getLottoList ($lotto_number,$shop_id){
         if($lotto_number == 'all'){
             $data =   ModelsLottos::where('shop_id',$shop_id)
-            ->orderBy('created_at','desc')
+            ->orderBy('lotto_number','asc')
             ->get();
             return response()->json(['message' => 'insert success',"data"=> $data] );
         }
         
         $data =   ModelsLottos::where('lotto_number',$lotto_number)
           ->where('shop_id',$shop_id)
-          ->orderBy('created_at','desc')
+          ->orderBy('lotto_number','asc')
           //->limit(100)
           ->get();
           return response()->json(['message' => 'insert success',"data"=> $data] );

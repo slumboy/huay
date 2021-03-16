@@ -17,10 +17,10 @@
                     <label for="shop_name" class="mb-2">ชื่อร้าน</label>
                     <input type="text" class="form-control" id="shop_name" name="shop_name" placeholder="ป้าศรี" required>
                 </div>
-                <div class="form-group mb-3">
+                {{-- <div class="form-group mb-3">
                     <label for="shop_address" class="mb-2">ที่อยู่</label>
-                    <textarea id="shop_address" class="form-control" name="shop_address" placeholder="ชัยภูมิ" rows="3" required></textarea>
-                </div>
+                    <textarea id="shop_address" class="form-control" name="shop_address" placeholder="ชัยภูมิ" rows="3" ></textarea>
+                </div> --}}
                 <div class="for-group text-end">
                   <button type="reset" class="btn btn-outline-warning">ยกเลิก</button>
                   <button type="submit" class="btn btn-outline-success">บันทึก</button>
