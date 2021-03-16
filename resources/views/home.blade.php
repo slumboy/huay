@@ -19,7 +19,7 @@
         </div>
 
         @foreach ($obj as $val)
-        <div class="col-md-4 mt-4">
+        <div class="col-md-4 mt-4" id="card-show" >
             <div class="card" >
                 <div class="card-body">
                   <h5 class="card-title">{{$val['lotto_number']}}
@@ -42,22 +42,18 @@
 @section('script')
     <script>
         function onShopChange() {
-            alert("ok")
             getLottoWithDate();
         }
         function getLottoWithDate() {
             var shop_id = $('#shop_id').val();
-            // if (lot_date == null || lot_date == "") {
-            //     alert("โปรดเลือกวันที่");
-            //     return;
-            // }
-
-            let apiUrl = "{{ url('api/getListShop') }}";
+            // alert(shop_id)
+            let apiUrl = "{{ url('api/checkStore') }}";
             $.ajax({
-                url: apiUrl,
+                url: apiUrl+'/'+shop_id,
                 type: "GET",
                 success: function(reponse) {
                     console.log(reponse)
+                    // $("#card-show").css("display", "none");
                     // $("#dataSection").empty();
                     // const lottodata = reponse.data;
                     // var index = 0;
@@ -90,9 +86,6 @@
 
                     // });
 
-                },
-                error: function() {
-                    alert('ไม่สามารถดึงข้อมูลได้');
                 }
             });
         }
