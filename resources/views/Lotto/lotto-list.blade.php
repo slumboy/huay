@@ -72,7 +72,7 @@
                     
                     lottodata.forEach(item => {
                         var innerHtml = "";
-                        innerHtml += "<div class=\"col-md-3 mb-3\" onclick=\"searchLottoByShop("+item.id+")\">";
+                        innerHtml += "<div class=\"col-md-2 col-6 mb-3\" onclick=\"searchLottoByShop("+item.id+")\">";
                         innerHtml += "    <div id=\"shop"+item.id+"\" class=\"card lotto-shop-list\" >";
                         innerHtml += "        <div class=\"card-body\">";
                         innerHtml += "        <h5 class=\"card-title m-0\">"+ item?.shop_name+" <span class=\"badge rounded-pill bg-warning text-dark float-end\">"+item.cnt+" ใบ</span></h5>";
@@ -107,7 +107,7 @@
                     
                     lottodata.forEach(item => {
                         var innerHtml = "";
-                        innerHtml += "<div class=\"col-md-3 mt-2\" id=\"" + item.id + "\">";
+                        innerHtml += "<div class=\"col-md-2 col-6 mt-2\" id=\"" + item.id + "\">";
                             innerHtml += "<div class=\"card\" >";
                         innerHtml += "<div class=\"card-body\">";
                         innerHtml += "<div class=\"row p-0 m-0 \">";

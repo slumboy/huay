@@ -16,10 +16,10 @@
                <input type="text" class="form-control" id="shop_name" name="shop_name" required value="{{ $shop->shop_name }}">
              </div> 
              
-             <div class="form-group mb-3">
+             {{-- <div class="form-group mb-3">
               <label for="">ที่อยู่</label>
               <textarea class="form-control" id="shop_address" name="shop_address" rows="3" required>{{ $shop->shop_address }}</textarea>
-            </div>
+            </div> --}}
           
             <div class="for-group text-end">
               {{-- <button type="reset" class="btn btn-outline-warning">ยกเลิก</button> --}}

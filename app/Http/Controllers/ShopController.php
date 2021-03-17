@@ -92,7 +92,7 @@ class ShopController extends Controller
         //
         $shop = Shop::find($id);
         $shop->shop_name = $request->shop_name;
-        $shop->shop_address = $request->shop_address;
+       // $shop->shop_address = $request->shop_address;
         $shop->update();
 
         return redirect('/shop');

@@ -11,7 +11,7 @@
                     <input type="hidden" name="_method" value="PUT">
                     {{ csrf_field() }}
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('ชื่อ') }}</label>
 
                         <div class="col-md-6 mb-3">
                             <input id="name" type="text" class="form-control" name="name" value="{{ $user->name}}" required autocomplete="name" >
@@ -21,7 +21,7 @@
                    
 
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">New {{ __('Password') }}</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-right"> {{ __('รหัสผ่านใหม่') }}</label>
 
                         <div class="col-md-6 mb-3">
                             <input id="password" type="password" class="form-control " name="password" required autocomplete="new-password" minlength="8" autofocus>

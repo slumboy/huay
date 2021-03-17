@@ -17,22 +17,26 @@
                     </select>
                 </div>
         </div>
-
-        @foreach ($obj as $val)
-        <div class="col-md-4 mt-4" id="card-show" >
-            <div class="card" >
-                <div class="card-body"><h5 class="card-title">{{$val['lotto_number']}} <span class="badge rounded-pill bg-success float-end">{{$val['myStore']->cnt}} ใบ</span></h5></div>
-                <ul class="list-group">
-                    @foreach ($val['store'] as $item)
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        {{$item->shop_name}}
-                        <span class="badge rounded-pill bg-warning text-dark">{{$item->cnt}} ใบ</span>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
+<div id="firstRender" class="row">
+    @foreach ($obj as $val)
+    <div class="col-md-4 mt-4" id="card-show" >
+        <div class="card" >
+            <div class="card-body"><h5 class="card-title">{{$val['lotto_number']}} <span class="badge rounded-pill bg-success float-end">{{$val['myStore']->cnt}} ใบ</span></h5></div>
+            <ul class="list-group">
+                @foreach ($val['store'] as $item)
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{$item->shop_name}}
+                    <span class="badge rounded-pill bg-warning text-dark">{{$item->cnt}} ใบ</span>
+                </li>
+                @endforeach
+            </ul>
         </div>
-        @endforeach
+    </div>
+    @endforeach
+</div>
+
+<div id="shopView" class="row"></div>
+        
     </div>
 @endsection
 
@@ -49,39 +53,57 @@
                 url: apiUrl+'/'+shop_id,
                 type: "GET",
                 success: function(reponse) {
-                    console.log(reponse)
-                    // $("#card-show").css("display", "none");
-                    // $("#dataSection").empty();
-                    // const lottodata = reponse.data;
-                    // var index = 0;
+                   
+                     $("#firstRender").css("display", "none");
+                    $("#shopView").empty();
+                    const lottodata = reponse.data;
+                    var index = 0;
+                    console.log(lottodata);
+                    lottodata.sort().reverse().forEach(item => {
+                        
+                        if(item.store && item?.myStore){
+                            var innerHtml = "";
+                            innerHtml+="<div class=\"col-md-4 mt-4\" id=\"card-show\" >";
+                            innerHtml+="    <div class=\"card\" >";
+                            innerHtml+="        <div class=\"card-body\"><h5 class=\"card-title\">"+item.lotto_number+" <span class=\"badge rounded-pill bg-success float-end\">"+item?.myStore?.cnt+" ใบ</span></h5></div>";
+                            innerHtml+="        <ul class=\"list-group\">";
+                                item.store.forEach(store=>{
+                                    innerHtml+="            <li class=\"list-group-item d-flex justify-content-between align-items-center\">";
+                                    innerHtml+=store.shop_name;
+                                    innerHtml+="                <span class=\"badge rounded-pill bg-warning text-dark\">"+store?.cnt+" ใบ</span>";
+                                    innerHtml+="            </li>";
+                                });
+                        
+                            innerHtml+="        </ul>";
+                            innerHtml+="    </div>";
+                            innerHtml+="</div>";
+                            index++;
 
-                    // lottodata.forEach(item => {
-                    //     var innerHtml = "";
-                    //     innerHtml += "<div class=\"col-md-3 mt-2\" id=\"" + item.id + "\">";
-                    //     if (index == 0) {
-                    //         innerHtml += "<div class=\"card\" style=\"background: #58c3aa59;\">";
-                    //     } else {
-                    //         innerHtml += "<div class=\"card\" >";
-                    //     }
+                            $("#shopView").append(innerHtml);
+                        }
+                        // else{
+                        //     var innerHtml = "";
+                        //     innerHtml+="<div class=\"col-md-4 mt-4\" id=\"card-show\" >";
+                        //     innerHtml+="    <div class=\"card\" >";
+                        //     innerHtml+="        <div class=\"card-body\"><h5 class=\"card-title\">"+item.lotto_number+" <span class=\"badge rounded-pill bg-success float-end\">"+item?.myStore?.cnt+" ใบ</span></h5></div>";
+                        //     innerHtml+="        <ul class=\"list-group\">";
+                        //         item.store.forEach(store=>{
+                        //             innerHtml+="            <li class=\"list-group-item d-flex justify-content-between align-items-center\">";
+                        //             innerHtml+=store.shop_name;
+                        //             innerHtml+="                <span class=\"badge rounded-pill bg-warning text-dark\">"+store?.cnt+" ใบ</span>";
+                        //             innerHtml+="            </li>";
+                        //         });
+                        
+                        //     innerHtml+="        </ul>";
+                        //     innerHtml+="    </div>";
+                        //     innerHtml+="</div>";
+                        //     index++;
 
-                    //     innerHtml += "<div class=\"card-body\">";
-                    //     innerHtml += "<div class=\"row p-0 m-0 \">";
-                    //     innerHtml += "<div class=\"col-10\">";
-                    //     innerHtml += item.lotto_number;
-                    //     innerHtml += "</div>";
-                    //     innerHtml += "<div class=\"col-2\">";
-                    //     innerHtml +=
-                    //         "<button type=\"button\" class=\"btn-close\" aria-label=\"Close\" onclick=\"onDelete(" +
-                    //         item.id + ")\"></button>";
-                    //     innerHtml += "</div>";
-                    //     innerHtml += "</div>";
-                    //     innerHtml += "</div>";
-                    //     innerHtml += "</div>";
-                    //     index++;
+                        //     $("#shopView").append(innerHtml);
+                        // }
+                       
 
-                    //     $("#dataSection").append(innerHtml);
-
-                    // });
+                    });
 
                 }
             });

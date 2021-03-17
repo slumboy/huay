@@ -7,11 +7,19 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4>ลบรายการลอตเตอรี่ทั้งหมด</h4>
     </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="alert alert-danger" role="alert">
+               หาก ลบข้อมูลแล้วข้อมูล ลอตเตอรี่ จะหายไปทั้งหมด
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12">
         <button class="btn btn-danger btn-lg" onclick="onDelete()">ลบข้อมูลทั้งหมด</button>
         </div>
     </div>
+  
 
 
 
