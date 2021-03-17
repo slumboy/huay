@@ -26,4 +26,4 @@ Route::delete('delete-lotto/{id}', [LottoController::class, 'destroy']);
 Route::post('compareLottery', [CompareLottery::class, 'compareLottoNumber']);
 Route::post('home', [CompareLottery::class, 'home']);
 // Route::post('/', [CompareLottery::class, 'home']);
-Route::get('getListShop',[CompareLottery::class ,'getListShop']);
+Route::get('checkStore/{id}',[CompareLottery::class ,'checkStore']);
