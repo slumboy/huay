@@ -98,19 +98,17 @@ class CompareLottery extends Controller
             ->groupBy('shops.id','shops.shop_name','lottos.lotto_number')
             ->get();
 
-              $myStore = DB::table('shops')
+            $myStore = DB::table('shops')
             ->join('lottos', 'lottos.shop_id', '=', 'shops.id')
-            ->select(DB::raw('COUNT(lottos.lotto_number) as cnt'))
-            ->where('lottos.lotto_number',$value->lotto_number)
-            ->where('lottos.shop_id','1')
-            ->groupBy('lottos.lotto_number')
+            ->select('*')
+            ->where('lottos.shop_id',$id)
             ->first();
 
 
             $obj[$key]["store"] = $arr;
             $obj[$key]["myStore"] = $myStore;
         }
-        // dd($obj);
+        dd($obj);
         // return view('home', array('obj'=>$obj,'shops'=>$shops));
         return redirect()->back();
     }
