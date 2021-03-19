@@ -19,13 +19,12 @@ class CompareLottery extends Controller
             ->groupBy('lotto_number')
             ->havingRaw('lotto_number_group > 1')
             ->orderBy('lotto_number_group', 'desc')
-            ->get();
+            ->paginate(20);
 
         return view('compare.compareLotto', compact('data'));
     }
     public function compareLottoNumber(Request $request)
     {
-
         $request->validate([
             "lotto_number" => "require"
         ]);

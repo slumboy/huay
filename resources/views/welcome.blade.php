@@ -1,5 +1,5 @@
-@extends('layouts.template')
-
-@section('content')
-
+@extends('layouts.template')
+
+@section('content')
+
 @endsection

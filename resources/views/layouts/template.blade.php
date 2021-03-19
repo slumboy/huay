@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,17 +14,15 @@
     <link href="/css/styles.css" rel="stylesheet">
     @yield('style')
 </head>
-
 <body>
     <div class="loadding"><ul><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Lottery</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <ul class="navbar-nav px-3 desktop">
+
             <li class="nav-item">
                 <a class="nav-link" href="/profile/{{ Auth::user()->id }}"><i class="far fa-id-badge"></i> {{ Auth::user()->name }}</a>
             </li>
@@ -55,7 +52,7 @@
                             <a class="nav-link @yield('lottery-list')" href="/lotto/list"><i class="fas fa-list-ol"></i> รายการลอตเตอรี่</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('compareLottery')" href="/compareMain"><i class="fas fa-greater-than-equal"></i> เปรียบเทียบ Lottery</a>
+                            <a class="nav-link @yield('compareLottery')" href="/compareMain"><i class="fas fa-greater-than-equal"></i> ผลการรวมลอตเตอรี่</a>
                         </li>
                         <li class="nav-item mobile">
                             <a class="nav-link" href="/profile/{{ Auth::user()->id }}"><i class="far fa-id-badge"></i> {{ Auth::user()->name }}</a>
@@ -65,9 +62,7 @@
                                 <i class="fas fa-sign-out-alt"></i> {{ __('ออกจากระบบ') }}
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link @yield('deleteLottery') text-danger" href="/remove"> <i class="fas fa-trash-alt"></i>  ลบข้อมูล Lottery ทั้งหมด</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link @yield('deleteLottery') text-danger" href="/remove"> <i class="fas fa-trash-alt"></i>  ลบข้อมูลลอตเตอรี่ ทั้งหมด</a></li>
                     </ul>
                 </div>
             </nav>
@@ -76,12 +71,9 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 p-3">
          @yield('content')
     </main>
-
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/script.js"></script>
     @yield('script')
-
 </body>
-
 </html>

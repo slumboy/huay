@@ -29,7 +29,8 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label for="lotto_number" class="form-label">กรอกหมายเลข</label>
-                    <input type="text" class="form-control" id="lotto_number" maxlength="6" minlength="6" placeholder="กรอกหมายเลข" required>
+                    <input type="text" class="form-control" id="lotto_number"  minlength="6" placeholder="กรอกหมายเลข" pattern="\d*" inputmode="numeric"  required>
+
                 </div>
                 <div class="col-md-2 col-sm-6">
                     <label for="submit" class="form-label">&nbsp;</label>

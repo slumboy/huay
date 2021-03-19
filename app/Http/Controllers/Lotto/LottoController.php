@@ -40,8 +40,12 @@ class LottoController extends Controller
         return view("Lotto.remove");
     }
     public function onRemove (){
-        DB::select(DB::raw("insert into lottos_old select * from lottos")) ;
-        DB::select(DB::raw("TRUNCATE TABLE lottos_old"));
+        OldLottos::truncate();
+        DB::insert("insert into lottos_old select * from lottos");
+        ModelsLottos::truncate();
+       /// DB::statement("TRUNCATE TABLE lottos_old");       
+        // DB::select(DB::raw("TRUNCATE TABLE lottos_old"));       
+        return response()->json(['message' => 'success xxxx'] );
     }
     public function SearchLottoByNo($lotto_no){
         if($lotto_no == 'all'){
