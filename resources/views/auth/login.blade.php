@@ -102,8 +102,8 @@
                                     <button type="submit" class="btn btn-outline-primary p-3" style="width: 60%">เข้าสู่ระบบ</button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-4" style="color: #616b75;">
-                                    <p class="mb-0">&copy;2021 feb-dev</p>
-                                    <small><a style="color: #616b75;" target="_blank" href="https://dev-pranakhon.now.sh/">https://dev-pranakhon.now.sh</a></small>
+                                    {{-- <p class="mb-0">&copy;2021 feb-dev</p> --}}
+                                    <p><a style="color: #616b75;" target="_blank" href="https://dev-pranakhon.now.sh/">&copy;2021 feb-dev</a></p>
                                  </div>
 
                             </form>
