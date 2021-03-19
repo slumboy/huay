@@ -50,7 +50,7 @@
                 <div class="col-lg-3 col-md-2"></div>
                 <div class="col-lg-6 col-md-8 login-box">
                     <div class="col-lg-12 login-key mt-3">
-                        <h1>{{ Request::server ("HTTP_HOST")}}</h1>
+                        <h1>klomdicklotto.com</h1>
                         <i class="fa fa-key" aria-hidden="true"></i>
                     </div>
                     <div class="col-lg-12 login-title"></div>
@@ -99,10 +99,12 @@
                                 </div>
 
                                 <div class="col-lg-12 text-center">
-
                                     <button type="submit" class="btn btn-outline-primary p-3" style="width: 60%">เข้าสู่ระบบ</button>
-
                                 </div>
+                                <div class="col-lg-12 text-center mt-4" style="color: #616b75;">
+                                    <p class="mb-0">&copy;2021 feb-dev</p>
+                                    <small><a style="color: #616b75;" target="_blank" href="https://dev-pranakhon.now.sh/">https://dev-pranakhon.now.sh</a></small>
+                                 </div>
 
                             </form>
 
