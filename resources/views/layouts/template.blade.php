@@ -39,7 +39,6 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <ul class="navbar-nav px-3 desktop">
-
             <li class="nav-item">
                 <a class="nav-link" href="/profile/{{ Auth::user()->id }}"><i class="far fa-id-badge"></i> {{ Auth::user()->name }}</a>
             </li>
