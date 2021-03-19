@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="{{ asset('/assets/fontawesome/css/all.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/main-styles.css') }}">
     <style>
         html,body {
             height: 100%;
