@@ -138,7 +138,6 @@ body {
 }
 
 .login-key {
-    height: 100px;
     font-size: 80px;
     line-height: 100px;
     background: -webkit-linear-gradient(#27ef9f, #0db8de);
@@ -308,10 +307,23 @@ label {
     height: 100%;
     cursor: pointer;
 }
-
 .date-picker input.form-control:focus {
     box-shadow: none;
 }
 .date-picker .datepicker-dropdown {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.login-footer a{
+    color: #616b75;
+}
+.login-footer:hover a{
+    color: #31f59a;
+}
+@media (max-width:767px){
+    .login-key {
+        background: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        color: #31f59a;
+    }
 }
